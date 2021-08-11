@@ -1,0 +1,189 @@
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+  background-color: #253141;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-shopname a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
+.create-check a {
+  font-size: 10px;
+  border: 1px solid lightblue;
+  padding: 14px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+.today {
+  color: yellow;
+  background-color:navy;
+  width: 300px;
+  text-align: center;
+  height: 30px;
+  padding: 5px 0 0 0;
+}
+
+.guests {
+  background-color: #2F3E51;
+  height: calc(100vh - 150px);
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.guest {
+  padding: 20px 0 40px;
+}
+
+.guest-name a {
+  text-decoration: none;
+  color: white;
+}
+
+.creates{
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.create-menu a{
+  font-size: 10px;
+  border: 1px solid lightblue;
+  color: deepskyblue;
+  text-decoration: none;
+  padding: 14px;
+}
+
+.create-guest a {
+  font-size: 10px;
+  border: 1px solid lightblue;
+  color: deepskyblue;
+  text-decoration: none;
+  padding: 14px;
+}
+
+.check {
+  background-color: #FFFFFF;
+  width: calc(100vw - 300px);
+}
+
+.check-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-guestname {
+  color: #333;
+  font-size: 24px;
+  margin-top: 36px;
+}
+
+.header-button {
+  margin-top: 40px;
+}
+
+.header-button a {
+  text-decoration: none;
+  border: 1px solid darkred;
+  color: darkred;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: orchid;
+}
+
+.checks {
+  background-color: #FAFAFA;
+  height: calc(100vh - 100px - 90px + 30px);
+  padding: 25px 40px 0;
+  overflow: scroll;
+}
+
+.drinkmenu{
+  font-size: 10px;
+  border: 1px solid lightblue;
+  color: darkred;
+  text-decoration: none;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.checkcenter {
+  margin: 20px 0 0 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuname {
+  text-align: center;
+}
+
+.menuprice {
+  text-align: center;
+}
+
+.menuallprice {
+  text-align: center;
+}
+
+.spinner_area input{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 50px;
+  vertical-align: middle;
+}
+
+.spinner_area input[type="button"]{
+  cursor: pointer;
+}
+
+.cups{
+  text-align: center;
+}
+
+.final-checks {
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  width: 200px;
+  font-size: 50px;
+  color: black;
+  background-color: burlywood;
+  text-align: center;
+}
+
+.final-check{
+  margin-top: 10px;
+}
+
+.final-check input{
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+}
