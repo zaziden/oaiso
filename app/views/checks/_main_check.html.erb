@@ -1,8 +1,80 @@
 <div class="check-header">
+  <div class="left-header">
+    <div class="header-guestname">
+      けんじ
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <a href="#">おあいそ</a>
+    </div>
+  </div>
 </div>
 
 <div class="checks">
+  <form class="drink">
+    <input class="drinkmenu" type=button value="ドリンク追加">
+  </form>
+  <div class="checkcenter">
+    <form class="menu-name">
+      <input class="menuname" type=text placeholder="シャンパン">
+    </form>
+    <form class="menu-price">
+      <input class="menuprice" type=text placeholder="¥500000">
+    </form>
+    <form class="menu-allprice">
+      <input class="menuallprice" type=text placeholder="合計金額">
+    </form>
+    <form class="spinner_area">
+      <INPUT type=button value="－" onClick="minus(this.form.q1)">
+      <INPUT class="cups" type=text name=q1 value=0 size=4>
+      <INPUT type=button value="＋" onClick="plus(this.form.q1)">
+    </form>
+    <SCRIPT language="JavaScript">
+      <!--
+      function plus(chk){
+      chk.value++;
+      if (chk.value==100) {chk.value=99}
+      }
+      function minus(chk){
+      chk.value--;
+      if (chk.value==-1) {chk.value=0}
+      }
+      // -->
+    </SCRIPT>
+  </div>
+  <div class="checkcenter">
+    <form class="menu-name">
+      <input class="menuname" type=text placeholder="シャンパン">
+    </form>
+    <form class="menu-price">
+      <input class="menuprice" type=text placeholder="¥500000">
+    </form>
+    <form class="menu-allprice">
+      <input class="menuallprice" type=text placeholder="合計金額">
+    </form>
+    <form class="spinner_area">
+      <INPUT type=button value="－" onClick="minus(this.form.q1)">
+      <INPUT class="cups" type=text name=q1 value=0 size=4>
+      <INPUT type=button value="＋" onClick="plus(this.form.q1)">
+    </form>
+    <SCRIPT language="JavaScript">
+      <!--
+      function plus(chk){
+      chk.value++;
+      if (chk.value==100) {chk.value=99}
+      }
+      function minus(chk){
+      chk.value--;
+      if (chk.value==-1) {chk.value=0}
+      }
+      // -->
+    </SCRIPT>
+  </div>
 </div>
-
-<div class="form">
+<div class="final-checks">
+  <p>お会計</p>
+  <form class="final-check">
+    <input type=text placeholder="総合計金額">
+  </form>
 </div>
