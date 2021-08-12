@@ -17,8 +17,8 @@
 }
 
 .header-shopname a{
-  font-size: 16px;
-  color: #FAFAFA;
+  font-size: 20px;
+  color: gold;
   text-decoration: none;
 }
 
@@ -35,13 +35,13 @@
   background-color:navy;
   width: 300px;
   text-align: center;
-  height: 30px;
-  padding: 5px 0 0 0;
+  height: 50px;
+  padding: 15px 0 0 0;
 }
 
 .guests {
   background-color: #2F3E51;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 150px - 50px);
   padding: 0 20px;
   overflow: scroll;
 }
@@ -109,11 +109,13 @@
   background-color: orchid;
 }
 
-.checks {
-  background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px + 30px);
-  padding: 25px 40px 0;
-  overflow: scroll;
+.checkcreate {
+  height: 50px;
+  width: 100%;
+  background-color: slateblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .drinkmenu{
@@ -123,14 +125,6 @@
   text-decoration: none;
   padding: 14px;
   cursor: pointer;
-}
-
-.checkcenter {
-  margin: 20px 0 0 0;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .menuname {
@@ -159,6 +153,42 @@
 
 .cups{
   text-align: center;
+}
+
+.checks {
+  background-color: #FAFAFA;
+  height: calc(100vh - 100px - 90px - 50px);
+  padding: 30px;
+  overflow: scroll;
+}
+
+.message {
+  margin: 10px 0 0 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 
 .final-checks {
