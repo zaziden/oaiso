@@ -1,6 +1,6 @@
 <div class="side-bar-header">
   <div class="header-shopname">
-    <%=  current_user.name %>
+    <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class="create-check">
     <a href="#">伝票を作成する</a>
