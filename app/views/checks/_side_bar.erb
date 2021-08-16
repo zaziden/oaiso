@@ -3,7 +3,7 @@
     <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class="create-check">
-    <a href="#">伝票を作成する</a>
+    <%= link_to '伝票作成', '/rooms/new' %>
   </div>
 </div>
 
@@ -34,22 +34,19 @@ function getNow() {
 
 <div class="creates">
   <div class="create-menu">
-    <a href="#">ドリンク登録</a>
+    <%= link_to 'ドリンク登録', '/menus/new' %>
   </div>
   <div class="create-guest">
-    <a href="#">ゲスト登録</a>
+    <%= link_to 'ゲスト登録', '/gests/new' %>
   </div>
 </div>
 
 <div class="guests">
+<% current_user.rooms.each do |room| %>
   <div class="guest">
     <div class="guest-name">
-      <a href="#">けんじ</a>
+      <a href="#"><%= room.room_name %></a>
     </div>
   </div>
-  <div class="guest">
-    <div class="guest-name">
-      <a href="#">希望</a>
-    </div>
-  </div>
+<% end %>
 </div>

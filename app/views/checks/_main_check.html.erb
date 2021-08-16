@@ -13,6 +13,7 @@
 <div class="checkcreate">
     <form class="menu-name">
       <input class="menuname" type=text placeholder="シャンパン">
+      <%#= f.collection_select :menu, Menu.all, :menu_name, :menu_name, class="menuname", include_blank: "ドリンク選択"%>
     </form>
     <form class="menu-price">
       <input class="menuprice" type=text placeholder="¥500000">

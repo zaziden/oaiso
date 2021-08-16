@@ -32,11 +32,11 @@
 
 .today {
   color: yellow;
-  background-color:navy;
   width: 300px;
   text-align: center;
   height: 50px;
   padding: 15px 0 0 0;
+  font-size: large;
 }
 
 .guests {
@@ -101,18 +101,19 @@
 }
 
 .header-button a {
-  text-decoration: none;
-  border: 1px solid darkred;
-  color: darkred;
   padding: 20px;
-  border-radius: 4px;
-  background-color: orchid;
+  text-decoration: none;
+  color: #FAFAFA;
+  background-color: black;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
 }
 
 .checkcreate {
   height: 50px;
-  width: 100%;
-  background-color: slateblue;
+  width: calc(100vw - 300px);
+  background-color: #253141;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -120,7 +121,7 @@
 
 .drinkmenu{
   font-size: 10px;
-  border: 1px solid lightblue;
+  border: 3px solid ;
   color: darkred;
   text-decoration: none;
   padding: 14px;
@@ -192,7 +193,7 @@
 }
 
 .final-checks {
-  background-color: #DDDDDD;
+  background-color: #253141;
   height: 90px;
   padding: 10px 40px;
   display: flex;

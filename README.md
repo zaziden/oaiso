@@ -25,11 +25,11 @@ Things you may want to cover:
 
 # テーブル設計
 
-## shops テーブル
+## users テーブル（ショップ）
 
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
-| shop_name          | string | null: false               |
+| name               | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 
@@ -38,43 +38,58 @@ Things you may want to cover:
 * has_many :menus
 * has_many :checks
 
-## guests テーブル
+## guests テーブル（客情報）
 
 | Column        | Type ----  | Options                        |
 | ------------- | ---------- | -------------------------------|
 | guest_name    | string     | null: false                    |
-| shop          | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
-* belongs_to :shop
+* belongs_to :user
 * has_many :checks
 
-## menus テーブル
+## menus テーブル（ドリンクメニュー）
 
 | Column    | Type         | Options                        |
 | ----------| ------------ | ------------------------------ |
 | menu_name | string       | null: false                    |
 | price     | integer      | null: false                    |
-| shop      | references   | null: false, foreign_key: true |
+| user      | references   | null: false, foreign_key: true |
 
 ### Association
-* belongs_to :shop
+* belongs_to :user
 * belongs_to :chek
 
-## checks テーブル
+## checks テーブル（注文）
 
 | Column     | Type       | Options                        |
 | -----------| ---------- | -------------------------------|
 | guest      | references | null: false, foreign_key: true |
-| date       | datetime   | null: false                    |
+| user       | references | null: false, foreign_key: true |
 | menu       | references | null: false, foreign_key: true |
-| shop       | references | null: false, foreign_key: true |
-| all_price  | integer    | null: false                    |
+| cup        | integer    | null: false                    |
 
 ### Association
-* belongs_to :shop
+* belongs_to :user
 * belongs_to :gest
-* has_many :menus
+* has_one :menu
+* belongs_to :sale
+
+## sales テーブル（お会計）
+
+| Column     | Type       | Options                        |
+| -----------|------------|--------------------------------|
+| all_price  | integer    | null: false                    |
+| guest      | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
+| check      | references | null: false, foreign_key: true |
+
+### Association
+* belongs_to :user
+* belongs_to :gest
+* has_many :checks
+
 
 
 
