@@ -86,6 +86,7 @@
 .check-header {
   height: 100px;
   padding: 0 40px;
+  border-top: 5px solid #253141;
   display: flex;
   justify-content: space-between;
 }
@@ -115,8 +116,12 @@
   width: calc(100vw - 300px);
   background-color: #253141;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+}
+
+.form{
+  margin: auto;
 }
 
 .drinkmenu{
@@ -126,19 +131,28 @@
   text-decoration: none;
   padding: 14px;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .menuname {
-  text-align: center;
+  height: 40px;
+  width: 200px;
+  margin: 0 20px 0 20px;
 }
 
 .menuprice {
+  height: 40px;
+  width: 200px;
+  margin: 0 20px 0 20px;
   text-align: center;
 }
 
 .menuallprice {
-  text-align: center;
+  height: 40px;
+  width: 200px;
+  margin-right: 20px;
 }
+
 
 .spinner_area input{
   border: 1px solid #ccc;
@@ -153,8 +167,15 @@
 }
 
 .cups{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 50px;
+  height: 30px;
+  vertical-align: middle;
   text-align: center;
 }
+
 
 .checks {
   background-color: #FAFAFA;
@@ -169,11 +190,7 @@
 
 .upper-message{
   display: flex;
-}
-
-.message-user {
-  color: #434a54;
-  font-size: 16px;
+  justify-content: space-between;
 }
 
 .message-date {
@@ -182,14 +199,24 @@
   padding-left: 10px;
 }
 
-.lower-message {
-  margin-top: 10px;
+.message-user {
+  color: #434a54;
+  font-size: 20px;
+  width: 300px;
 }
+
+.cup {
+  color: #434a54;
+  font-size: 20px;
+}
+
 
 .message-content {
   color: #434a54;
-  font-size: 14px;
+  font-size: 25px;
   margin-bottom: 40px;
+  width: 200px;
+  text-align: right;
 }
 
 .final-checks {
@@ -210,11 +237,19 @@ p {
 
 .final-check{
   margin-top: 10px;
+  display: flex;
 }
 
 .final-check input{
-  width: 300px;
-  height: 50px;
   text-align: center;
   font-size: 30px;
+}
+.oaiso{
+  margin: 0 10px;
+  text-decoration: none;
+  color: #FAFAFA;
+  background-color: black;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
 }

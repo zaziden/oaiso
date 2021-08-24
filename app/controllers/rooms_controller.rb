@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @gest = Gest.where(user_id: current_user.id)
   end
 
   def create

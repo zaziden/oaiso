@@ -1,27 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+* oaiso
 
-Things you may want to cover:
+## アプリケーション概要
+* 主に飲食店の売上計算やデジタル伝票としてお使いいただけます。
 
-* Ruby version
+## テスト用アカウント
+* 
 
-* System dependencies
+## 利用方法
+* 
 
-* Configuration
+## 目指した課題解決
+* ノートや紙伝票で管理していた売上やオーダーなどを、パソコンやタブレット1台で簡単に管理できる事を目指しました。
 
-* Database creation
+## 洗い出した要件
+* 
 
-* Database initialization
+## 実装予定の機能
+* 経費の管理機能
+* 日、月、年ごとに売上金額等を閲覧できる機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## ローカルでの動作方法
+* 
 
 # テーブル設計
 
@@ -34,22 +36,22 @@ Things you may want to cover:
 | encrypted_password | string | null: false               |
 
 ### Association
-* has_many :guests
+* has_many :gests
 * has_many :menus
 * has_many :checks
+* has_many :rooms
 
-## guests テーブル（客情報）
+## gests テーブル（客情報）
 
-| Column        | Type ----  | Options                        |
+| Column        | Type       | Options                        |
 | ------------- | ---------- | -------------------------------|
-| guest_name    | string     | null: false                    |
+| gest_name     | string     | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
 ### Association
 * belongs_to :user
-* has_many :checks
 
-## menus テーブル（ドリンクメニュー）
+## menus テーブル（メニュー）
 
 | Column    | Type         | Options                        |
 | ----------| ------------ | ------------------------------ |
@@ -59,38 +61,29 @@ Things you may want to cover:
 
 ### Association
 * belongs_to :user
-* belongs_to :chek
 
 ## checks テーブル（注文）
 
-| Column     | Type       | Options                        |
-| -----------| ---------- | -------------------------------|
-| guest      | references | null: false, foreign_key: true |
-| user       | references | null: false, foreign_key: true |
-| menu       | references | null: false, foreign_key: true |
-| cup        | integer    | null: false                    |
+| Column      | Type       | Options                        |
+| ------------| ---------- | -------------------------------|
+| room        | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+| menuname    | string     | null: false                    |
+| menuprice   | integer    | null: false                    |
+| cup         | integer    | null: false                    |
+| menuallprice| integer    | null: false                    |
 
 ### Association
 * belongs_to :user
-* belongs_to :gest
-* has_one :menu
-* belongs_to :sale
+* belongs_to :room
 
-## sales テーブル（お会計）
+## room テーブル（伝票）
 
 | Column     | Type       | Options                        |
 | -----------|------------|--------------------------------|
-| all_price  | integer    | null: false                    |
-| guest      | references | null: false, foreign_key: true |
 | user       | references | null: false, foreign_key: true |
-| check      | references | null: false, foreign_key: true |
+| room_name  | integer    | null: false                    |
 
 ### Association
 * belongs_to :user
-* belongs_to :gest
-* has_many :checks
-
-
-
-
-
+* has_one :check

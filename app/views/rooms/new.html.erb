@@ -6,7 +6,9 @@
         <%= f.label :ゲスト選択, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.collection_select :room_name, Gest.all, :gest_name, :gest_name, include_blank: "選択してください" %>
+      <% if current_user.id %>
+        <%= f.collection_select :room_name, @gest, :gest_name, :gest_name, include_blank: "選択してください" %>
+      <% end %>
       </div>
     </div>
     <div class='chat-room-form__field'>

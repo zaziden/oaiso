@@ -1,0 +1,2 @@
+module AllchecksHelper
+end
