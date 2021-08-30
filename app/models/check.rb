@@ -1,4 +1,6 @@
 class Check < ApplicationRecord
+  acts_as_paranoid
+  
   validates :menuname, presence: true
   validates :menuprice, presence: true
   validates :menuallprice, presence: true
@@ -6,5 +8,4 @@ class Check < ApplicationRecord
 
   belongs_to :room
   belongs_to :user
-  has_one :allcheck
 end

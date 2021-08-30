@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_055635) do
+ActiveRecord::Schema.define(version: 2021_08_25_092251) do
 
   create_table "allchecks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "allcheck", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_08_23_055635) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_allchecks_on_deleted_at"
     t.index ["room_id"], name: "index_allchecks_on_room_id"
     t.index ["user_id"], name: "index_allchecks_on_user_id"
   end
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 2021_08_23_055635) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_checks_on_deleted_at"
     t.index ["room_id"], name: "index_checks_on_room_id"
     t.index ["user_id"], name: "index_checks_on_user_id"
   end
@@ -45,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_055635) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "menu_name", null: false
-    t.integer "price", null: false
+    t.integer "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -57,6 +61,8 @@ ActiveRecord::Schema.define(version: 2021_08_23_055635) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_rooms_on_deleted_at"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 

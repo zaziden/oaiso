@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :gests, only: [:new, :create]
   resources :menus, only: [:new, :create]
-  resources :rooms, only: [:new, :create] do
+  resources :rooms, only: [:new, :create, :destroy] do
     resources :checks, only: [:index, :create]
     resources :allchecks
   end

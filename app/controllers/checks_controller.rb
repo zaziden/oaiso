@@ -1,10 +1,15 @@
 class ChecksController < ApplicationController
+
   def index
     @allcheck = Allcheck.new
     @check = Check.new
     @room = Room.find(params[:room_id])
     @checks = @room.checks.includes(:user)
-    @menus = Menu.where(user_id: current_user.id)
+    @menus = Menu.where(user_id: current_user.id).where.not(price: nil).order("price")
+    @allchecks = Check.where(room_id: params[:room_id]).sum(:menuallprice)
+    unless @room.user_id == current_user.id
+      redirect_to user_session_path
+    end
   end
 
   def create
@@ -23,5 +28,6 @@ class ChecksController < ApplicationController
   def check_params
     params.require(:check).permit(:menuname, :menuprice, :menuallprice, :cup).merge(user_id: current_user.id)
   end
+
 
 end

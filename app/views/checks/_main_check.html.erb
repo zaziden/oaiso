@@ -6,7 +6,7 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <a href="#">おあいそ</a>
+      <%= link_to "削除", room_path(@room), method: :delete %>
     </div>
   </div>
 </div>
@@ -18,9 +18,9 @@
       <INPUT type=button value="－" onClick="minus(this.form.gh)">
     <%= f.text_field :cup,  placeholder: 0, class: 'cups', id: 'gh', size: 4 %>
       <INPUT type=button value="＋" onClick="plus(this.form.gh)">
-    
+
     <%= f.collection_select :menuprice, @menus, :price, :price, {include_blank: "金額選択"}, {class: 'menuprice',  id: 'cd', onchange:"myfunc()"} %>
-      
+
     <%= f.text_field :menuallprice, class: 'menuallprice', placeholder: '合計金額', id: 'ef'%>
 
     <%=f.submit class:"drinkmenu", value: 'オーダー追加' %>
@@ -52,11 +52,11 @@
 <div class="final-checks">
   <p>お会計</p>
   <%= form_with model: [@room, @allcheck], class: 'final-check', local: true do |f| %>
-  <div class="tex">
-    <%= f.text_field :allcheck, value:"¥#{Check.where(room_id: params[:room_id]).sum(:menuallprice)}" %>
-  </div>
-  <div class="sub">
-    <%=f.submit value: 'おあいそ', class: 'oaiso'%>
-  </div>
+    <div class="tex">
+      <%= f.text_field :allcheck, value: @allchecks %>
+    </div>
+    <div class="sub">
+      <%=f.submit class: 'oaiso', value: 'おあいそ'%>
+    </div>
   <% end %>
 </div>
